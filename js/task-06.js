@@ -1,16 +1,16 @@
-const validationInput = document.querySelector('#validation-input')
+const validationInput = document.querySelector('#validation-input');
 
-validationInput.addEventListener('blur', () => {
-    const inputValue = validationInput.value
-    const trueLength = parseInt(validationInput.dataset.length)
+validationInput.addEventListener('blur', (event) => {
+    const inputValue = event.target.value;
+    const trueLength = parseInt(event.target.dataset.length);
 
     if (inputValue.length === trueLength) {
-        validationInput.classList.remove('invalid')
-        validationInput.classList.add('valid')
+        event.target.classList.remove('invalid');
+        event.target.classList.add('valid');
     } else {
-        validationInput.classList.remove('valid')
-        validationInput.classList.add('invalid')
+        event.target.classList.remove('valid');
+        event.target.classList.add('invalid');
     }
-})
+});
 
 // Done ;)

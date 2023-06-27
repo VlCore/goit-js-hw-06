@@ -13,16 +13,14 @@ const images = [
   },
 ];
 
-const galleryListImg = document.querySelector('.gallery')
+const galleryListImg = document.querySelector('.gallery');
 
-const makeImgGallery = ({ url, alt } = {}) => {
-  const galleryImg = 
-  `<li class="gallery-item">
-    <img src="${url}" alt="${alt}"> 
-  </li>`
-  return galleryImg
-}
+const galleryImgArr = images.map(({ url, alt }) => {
+  return `<li class="gallery-item">
+    <img src="${url}" alt="${alt}">
+  </li>`;
+});
 
-const galleryImgArr = images.map((el) => makeImgGallery(el))
-galleryListImg.insertAdjacentHTML("afterbegin", galleryImgArr.join(''))
+galleryListImg.insertAdjacentHTML('afterbegin', galleryImgArr.join(''));
+// Це зробив трошки за допомогою chatgpt, спитав чи правильно зробив, та він дещо видалив))
 // Done ;)
